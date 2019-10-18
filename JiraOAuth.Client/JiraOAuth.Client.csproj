@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <RootNamespace>JiraOAuthClient</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="OAuth.DotNetCore" Version="3.0.1" />
+    </ItemGroup>
+
+</Project>
