@@ -1,52 +1,50 @@
 using System;
+using System.Net;
+using JiraOAuth.Client;
 using Xunit;
 
-namespace JiraOAuthClient.Tests
+
+namespace JiraOAuth.Tests
 {
     public class OAuthTests
     {
         // ToDo: Load these from config
         private const string BaseUrl = "https://jira.domain.com";
         private const string ConsumerKey= "JiraOAuthKey";
-        private const string ConsumerSecret = "-----BEGIN RSA PRIVATE KEY----- -----END RSA PRIVATE KEY-----";
+        private const string ConsumerSecret = "-----BEGIN RSA PRIVATE KEY----- your .pem file contents here -----END RSA PRIVATE KEY-----";
 
+        private const string TestUrl = "http://jira.example.com";
+        private const string TestKey = "TestKey";
 
+        
         [Fact]
         public void GetRequestTokenTest()
         {
-            JiraClient client = new JiraClient(BaseUrl, ConsumerKey, ConsumerSecret);
-            client.GetRequestToken();
-            Assert.NotNull(client.RequestToken);
+            var jiraOAuthClient = new JiraOAuthClient(BaseUrl, ConsumerKey, ConsumerSecret);
+            jiraOAuthClient.GetRequestToken();
+
+            var url = jiraOAuthClient.GetAuthorizationUrlWithCredentials();
+            Assert.Contains("oauth_token", url);
+            Assert.Contains("oauth_token_secret", url);
         }
         
         
         [Theory]
-        [InlineData("", "", "")]
-        [InlineData(BaseUrl, "", "")]
-        [InlineData("", ConsumerKey, "")]
-        [InlineData("", "", ConsumerSecret)]
-        [InlineData(BaseUrl, ConsumerKey, "")]
-        [InlineData("", ConsumerKey, ConsumerSecret)]
-        [InlineData(BaseUrl, "", ConsumerKey)]
+        [InlineData(TestUrl, TestKey, ConsumerSecret)]
+        [InlineData(TestUrl, ConsumerKey, ConsumerSecret)]
+        [InlineData(BaseUrl, TestKey, ConsumerSecret)]
         public void GetRequestTokenWithCredentialsTest(string baseUrl, string consumerKey, string consumerSecret)
         {
-            JiraClient client = new JiraClient(baseUrl, consumerKey, consumerSecret);
-
-            try { client.GetRequestToken(); } catch {
-                Assert.Null(client.RequestToken);
-                return;
-            }
-            
-            // Invalid credentials should cause GetRequestToken to throw so we shouldn't get here
-            throw new InvalidOperationException("Test should have already passed");
+            var jiraOAuthClient = new JiraOAuthClient(baseUrl, consumerKey, consumerSecret);
+            Assert.Throws<WebException>(() => jiraOAuthClient.GetRequestToken());
         }
 
         
         [Fact]
         public void GetAccessTokenWithoutRequestTokenTest()
         {
-            JiraClient client = new JiraClient(BaseUrl, ConsumerKey, ConsumerSecret);
-            Assert.Throws<Exception>(() => client.GetAccessToken("")); 
+            var jiraOAuthClient = new JiraOAuthClient(BaseUrl, ConsumerKey, ConsumerSecret);
+            Assert.Throws<InvalidOperationException>(() => jiraOAuthClient.GetAccessToken()); 
         }
     }
 }

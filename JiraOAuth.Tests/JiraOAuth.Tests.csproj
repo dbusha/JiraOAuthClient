@@ -5,7 +5,11 @@
 
         <IsPackable>false</IsPackable>
 
-        <RootNamespace>JiraOAuthClient.Tests</RootNamespace>
+        <RootNamespace>JiraOAuth.Tests</RootNamespace>
+
+        <Configurations>Release;Debug</Configurations>
+
+        <Platforms>x64</Platforms>
     </PropertyGroup>
 
     <ItemGroup>

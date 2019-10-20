@@ -4,27 +4,40 @@
     <e p="C:\source\JiraOauthClient" t="IncludeFlat">
       <e p="JiraOAuth.Client" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
+        <e p="ConsumerCredentials.cs" t="Include" />
+        <e p="JiraAccessToken.cs" t="Include" />
         <e p="JiraOAuth.Client.csproj" t="IncludeRecursive" />
         <e p="JiraOAuthClient.cs" t="Include" />
+        <e p="JiraRequestToken.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="netcoreapp3.0" t="Include">
-              <e p="JiraOAuth.Client.AssemblyInfo.cs" t="Include" />
+          <e p="x64" t="Include">
+            <e p="Release" t="Include">
+              <e p="netcoreapp3.0" t="Include">
+                <e p="JiraOAuth.Client.AssemblyInfo.cs" t="Include" />
+              </e>
             </e>
           </e>
         </e>
+        <e p="RsaPrivateKeyParser.cs" t="Include" />
+        <e p="TokenBase.cs" t="Include" />
       </e>
       <e p="JiraOAuth.Tests" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
+        <e p="ConsumerCredentialsTests.cs" t="Include" />
+        <e p="JiraAccessTokenTests.cs" t="Include" />
         <e p="JiraOAuth.Tests.csproj" t="IncludeRecursive" />
+        <e p="JiraRequestTokenTests.cs" t="Include" />
         <e p="OAuthUnitTests.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="netcoreapp3.0" t="Include">
-              <e p="JiraOAuth.Tests.AssemblyInfo.cs" t="Include" />
+          <e p="x64" t="Include">
+            <e p="Release" t="Include">
+              <e p="netcoreapp3.0" t="Include">
+                <e p="JiraOAuth.Tests.AssemblyInfo.cs" t="Include" />
+              </e>
             </e>
           </e>
         </e>
+        <e p="RsaPrivateKeyParserTests.cs" t="Include" />
       </e>
       <e p="JiraOauthClient.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

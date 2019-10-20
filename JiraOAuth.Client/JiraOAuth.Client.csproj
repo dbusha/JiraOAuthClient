@@ -2,11 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
-        <RootNamespace>JiraOAuthClient</RootNamespace>
+        <RootNamespace>JiraOAuth.Client</RootNamespace>
+        <Configurations>Release;Debug</Configurations>
+        <Platforms>x64</Platforms>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="OAuth.DotNetCore" Version="3.0.1" />
+      <PackageReference Include="RestSharp" Version="106.6.10" />
     </ItemGroup>
 
 </Project>
