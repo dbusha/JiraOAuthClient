@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JiraOAuth.Client", "JiraOAu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JiraOAuth.Tests", "JiraOAuth.Tests\JiraOAuth.Tests.csproj", "{D2AE5EAE-B95C-4F08-8AF2-A158C54114D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples", "Examples\Examples.csproj", "{E51E013A-7711-4320-A3FF-BB7C3CA4C2E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|x64 = Release|x64
@@ -18,5 +20,9 @@ Global
 		{D2AE5EAE-B95C-4F08-8AF2-A158C54114D3}.Release|x64.Build.0 = Release|x64
 		{D2AE5EAE-B95C-4F08-8AF2-A158C54114D3}.Debug|x64.ActiveCfg = Debug|x64
 		{D2AE5EAE-B95C-4F08-8AF2-A158C54114D3}.Debug|x64.Build.0 = Debug|x64
+		{E51E013A-7711-4320-A3FF-BB7C3CA4C2E4}.Release|x64.ActiveCfg = Release|Any CPU
+		{E51E013A-7711-4320-A3FF-BB7C3CA4C2E4}.Release|x64.Build.0 = Release|Any CPU
+		{E51E013A-7711-4320-A3FF-BB7C3CA4C2E4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E51E013A-7711-4320-A3FF-BB7C3CA4C2E4}.Debug|x64.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
